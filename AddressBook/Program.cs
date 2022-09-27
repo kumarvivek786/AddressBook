@@ -12,6 +12,10 @@ namespace AddressBook
         {
             //UC-1 create a Contacts
             Console.WriteLine("Welcome to Address Book");
+            AddressBook address = new AddressBook();
+            address.AddNewContact();
+            Console.WriteLine();
+            address.Display();
             Console.ReadLine();
         }
       
