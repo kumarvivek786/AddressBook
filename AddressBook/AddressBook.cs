@@ -40,21 +40,65 @@ namespace AddressBook
             contactlist.Add(contact);
 
         }
-        public void Display()
+        public void EditContact()
         {
+            Console.WriteLine("Enter The First Name You Want To Edit");
+            string firstname = Console.ReadLine();
             foreach (Contact contact in contactlist)
             {
-                Console.WriteLine(contact.FirstName);
-                Console.WriteLine(contact.LastName);
-                Console.WriteLine(contact.Address);
-                Console.WriteLine(contact.City);
-                Console.WriteLine(contact.State);
-                Console.WriteLine(contact.PhNo);
-                Console.WriteLine(contact.Zip);
-                Console.WriteLine(contact.Email);
-
+                if (contact.FirstName.ToLower() == firstname.ToLower())
+                {
+                    Console.WriteLine("Enter which Information You Want To Change");
+                    Console.WriteLine("\nEnter 1 To Edit Last Name,\n2 To Change The City,\n3 To State,\n4 To Zip,\n5 to Email,\n6 to PhoneNumber");
+                    int option = Convert.ToInt32(Console.ReadLine());
+                    switch (option)
+                    {
+                        case 1:
+                            Console.WriteLine("Enter The Lastname");
+                            contact.LastName = Console.ReadLine();
+                            break;
+                        case 2:
+                            Console.WriteLine("Enter The City");
+                            contact.City = Console.ReadLine();
+                            break;
+                        case 3:
+                            Console.WriteLine("Enter The State");
+                            contact.State = Console.ReadLine();
+                            break;
+                        case 4:
+                            Console.WriteLine("Enter The Zip");
+                            contact.Zip = Console.ReadLine();
+                            break;
+                        case 5:
+                            Console.WriteLine("Enter the Email");
+                            contact.Email = Console.ReadLine();
+                            break;
+                        case 6:
+                            Console.WriteLine("Enter the PhoneNumber");
+                            contact.PhNo = Console.ReadLine();
+                            break;
+                    }
+                    return;
+                }
             }
+            Console.WriteLine("No Contact With this Firstname");
         }
+            public void Display()
+            {
+                foreach (Contact contact in contactlist)
+                {
+                    Console.WriteLine(contact.FirstName);
+                    Console.WriteLine(contact.LastName);
+                    Console.WriteLine(contact.Address);
+                    Console.WriteLine(contact.City);
+                    Console.WriteLine(contact.State);
+                    Console.WriteLine(contact.PhNo);
+                    Console.WriteLine(contact.Zip);
+                    Console.WriteLine(contact.Email);
 
+                }
+            }
+
+        
     }
 }
