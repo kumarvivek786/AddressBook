@@ -10,13 +10,14 @@ namespace AddressBook
     {
         static void Main(string[] args)
         {
-            //UC-1 create a Contacts
+            //UC-4 Remove Name 
             Console.WriteLine("Welcome to Address Book");
             AddressBook address = new AddressBook();
             address.AddNewContact();
             Console.WriteLine();
             address.EditContact();
             address.Display();
+            address.RemoveContact();
             Console.ReadLine();
         }
       
